@@ -16,19 +16,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.dvoraksoft.hilt.ExampleApp
 import com.dvoraksoft.hilt.domain.Item
 import com.dvoraksoft.hilt.presentation.ui.theme.HiltTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    @Inject
     lateinit var exampleViewModel: ExampleViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val component = (application as ExampleApp).component
-        component.inject(this)
+//        val component = (application as ExampleApp).component
+//        component.inject(this)
 
         enableEdgeToEdge()
         setContent {

@@ -3,9 +3,11 @@ package com.dvoraksoft.hilt.data
 import android.content.Context
 import android.util.Log
 import com.dvoraksoft.hilt.domain.Item
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class Database(
-    private val context: Context
+class Database @Inject constructor(
+    @ApplicationContext private val context: Context
 ) {
 
     init {

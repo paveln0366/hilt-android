@@ -3,8 +3,9 @@ package com.dvoraksoft.hilt.data
 import android.util.Log
 import com.dvoraksoft.hilt.domain.ExampleRepository
 import com.dvoraksoft.hilt.domain.Item
+import javax.inject.Inject
 
-class ExampleRepositoryImpl(
+class ExampleRepositoryImpl @Inject constructor(
     private val database: Database
 ) : ExampleRepository {
 

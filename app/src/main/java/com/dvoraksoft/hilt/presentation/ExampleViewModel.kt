@@ -4,8 +4,9 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.dvoraksoft.hilt.domain.ExampleUseCase
 import com.dvoraksoft.hilt.domain.Item
+import javax.inject.Inject
 
-class ExampleViewModel(
+class ExampleViewModel @Inject constructor(
     private val useCase: ExampleUseCase
 ) : ViewModel() {
 

@@ -1,9 +1,10 @@
 package com.dvoraksoft.hilt
 
 import android.app.Application
-import com.dvoraksoft.hilt.di.Component
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class ExampleApp : Application() {
 
-    val component = Component(this)
+//    val component = Component(this)
 }
