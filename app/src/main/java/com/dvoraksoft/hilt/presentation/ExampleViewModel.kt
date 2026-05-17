@@ -7,8 +7,10 @@ import com.dvoraksoft.hilt.domain.Item
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel(assistedFactory = ExampleViewModel.Factory::class)
 class ExampleViewModel @AssistedInject constructor(
     private val useCase: ExampleUseCase,
     @Assisted("item") private val item: Item
