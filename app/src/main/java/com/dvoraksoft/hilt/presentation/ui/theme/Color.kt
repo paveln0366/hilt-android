@@ -1,4 +1,4 @@
-package com.dvoraksoft.hilt.ui.theme
+package com.dvoraksoft.hilt.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
