@@ -11,7 +11,7 @@ class Component(
     context: Context
 ) {
 
-    val database = Database(context)
+    val database = Database.getInstance(context)
 
     val repository = ExampleRepositoryImpl(database)
 
