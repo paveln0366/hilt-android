@@ -16,8 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.dvoraksoft.hilt.di.Component
-import com.dvoraksoft.hilt.domain.ExampleRepository
+import com.dvoraksoft.hilt.ExampleApp
 import com.dvoraksoft.hilt.domain.Item
 import com.dvoraksoft.hilt.presentation.ui.theme.HiltTheme
 
@@ -25,12 +24,10 @@ class MainActivity : ComponentActivity() {
 
     lateinit var exampleViewModel: ExampleViewModel
 
-    lateinit var repository: ExampleRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val component = Component()
+        val component = (application as ExampleApp).component
         component.inject(this)
 
         enableEdgeToEdge()
