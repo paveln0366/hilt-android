@@ -4,6 +4,7 @@ import android.content.Context
 import com.dvoraksoft.hilt.data.Database
 import com.dvoraksoft.hilt.data.ExampleRepositoryImpl
 import com.dvoraksoft.hilt.domain.ExampleUseCase
+import com.dvoraksoft.hilt.domain.Item
 import com.dvoraksoft.hilt.presentation.ExampleViewModel
 import com.dvoraksoft.hilt.presentation.MainActivity
 
@@ -17,12 +18,12 @@ class Component(
 
     val exampleUseCase = ExampleUseCase(repository)
 
-    val exampleViewModel = ExampleViewModel(exampleUseCase) // Singleton
+    val exampleViewModel2 = ExampleViewModel(exampleUseCase, Item(0)) // Singleton
 
-    val exampleViewModel2
-        get() = ExampleViewModel(exampleUseCase) // Not singleton
+    val exampleViewModel
+        get() = ExampleViewModel(exampleUseCase, Item(0)) // Not singleton
 
     fun inject(mainActivity: MainActivity) {
-        mainActivity.exampleViewModel = exampleViewModel
+//        mainActivity.exampleViewModel = exampleViewModel
     }
 }
